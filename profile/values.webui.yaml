@@ -1,0 +1,15 @@
+app:
+  name: webui
+
+image:
+  repository: dockercoins/webui
+  tag: v0.2
+  health:
+    livenessProbe:
+      httpGet:
+        path: /
+        port: container-port
+    readinessProbe:
+      httpGet:
+        path: /
+        port: container-port

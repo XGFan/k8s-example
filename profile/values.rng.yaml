@@ -1,0 +1,17 @@
+app:
+  name: rng
+image:
+  repository: dockercoins/rng
+  tag: v0.4
+  health:
+    livenessProbe:
+      httpGet:
+        path: /
+        port: container-port
+    readinessProbe:
+      httpGet:
+        path: /
+        port: container-port
+
+service:
+  deployType: DaemonSet

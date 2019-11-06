@@ -1,0 +1,4 @@
+.idea
+.vagrant
+coin/charts/*.tgz
+untitled.iml

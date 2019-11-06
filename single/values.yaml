@@ -1,0 +1,47 @@
+app:
+  name: ""
+
+
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: latest
+  pullPolicy: IfNotPresent
+  port: 80
+  protocol: TCP
+  health:
+    livenessProbe: {}
+    readinessProbe: {}
+
+
+##custom start
+project:
+  name: "dockercoins"
+##custom end
+
+service:
+  type: ClusterIP
+  port: 80
+  deployType: Deployment
+
+ingress:
+  enabled: true
+  annotations: {}
+  # kubernetes.io/ingress.class: nginx
+  # kubernetes.io/tls-acme: "true
+
+resources: {}
+# limits:
+#   cpu: 100m
+#   memory: 128Mi
+# requests:
+#   cpu: 100m
+#   memory: 128Mi
+
+nodeSelector: {}
+
+hostAliases: []
+
+
+

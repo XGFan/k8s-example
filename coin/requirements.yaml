@@ -1,0 +1,17 @@
+dependencies:
+  - name: single
+    version: 0.1.0
+    repository: file://../single
+    alias: rng
+  - name: single
+    version: 0.1.0
+    repository: file://../single
+    alias: hasher
+  - name: single
+    version: 0.1.0
+    repository: file://../single
+    alias: worker
+  - name: single
+    version: 0.1.0
+    repository: file://../single
+    alias: webui

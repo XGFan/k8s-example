@@ -1,0 +1,12 @@
+app:
+  name: redis
+
+image:
+  repository: redis
+  port: 6379
+
+service:
+  port: 6379
+
+ingress:
+  enabled: false

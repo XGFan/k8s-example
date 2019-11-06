@@ -1,0 +1,12 @@
+image:
+  repository: kennethreitz/httpbin
+  port: 80
+  health:
+    livenessProbe:
+      httpGet:
+        path: /
+        port: container-port
+    readinessProbe:
+      httpGet:
+        path: /
+        port: container-port

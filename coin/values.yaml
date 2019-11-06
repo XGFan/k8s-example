@@ -1,0 +1,70 @@
+rng:
+  app:
+    name: rng
+  image:
+    repository: dockercoins/rng
+    tag: v0.4
+    port: 80
+    health:
+      livenessProbe:
+        httpGet:
+          path: /
+          port: container-port
+      readinessProbe:
+        httpGet:
+          path: /
+          port: container-port
+  service:
+    deployType: DaemonSet
+
+hasher:
+  app:
+    name: hasher
+  image:
+    repository: dockercoins/hasher
+    tag: v0.2
+    port: 80
+    health:
+      livenessProbe:
+        httpGet:
+          path: /
+          port: container-port
+      readinessProbe:
+        httpGet:
+          path: /
+          port: container-port
+
+worker:
+  app:
+    name: worker
+  image:
+    repository: dockercoins/worker
+    tag: v0.2
+    port: 80
+  ingress:
+    enabled: false
+  hostAliases:
+    - ip: "192.168.33.101"
+      hostnames:
+        - "redis"
+
+webui:
+  app:
+    name: webui
+  image:
+    repository: dockercoins/webui
+    tag: v0.2
+    port: 80
+    health:
+      livenessProbe:
+        httpGet:
+          path: /
+          port: container-port
+      readinessProbe:
+        httpGet:
+          path: /
+          port: container-port
+  hostAliases:
+    - ip: "192.168.33.101"
+      hostnames:
+        - "redis"

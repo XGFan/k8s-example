@@ -1,0 +1,8 @@
+app:
+  name: worker
+image:
+  repository: dockercoins/worker
+  tag: v0.2
+
+ingress:
+  enabled: false
